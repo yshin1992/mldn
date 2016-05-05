@@ -1,9 +1,16 @@
 package org.ysh.redis.pool;
 
+import org.ysh.redis.PoolCfg;
+
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+ * Jedis连接池
+ * @author Administrator
+ *
+ */
 public class JedisPoolUtil {
 	
 	private static JedisPool jedisPool;
@@ -25,7 +32,7 @@ public class JedisPoolUtil {
 	public static void returnResource(Jedis jedis)
 	{
 		if(null != jedis){
-			jedisPool.returnResourceObject(jedis);
+			jedis.close();
 		}
 	}
 }

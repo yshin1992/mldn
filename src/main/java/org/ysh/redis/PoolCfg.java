@@ -1,9 +1,11 @@
-package org.ysh.redis.pool;
+package org.ysh.redis;
 
 public interface PoolCfg {
 	public static final String REDIS_HOST = "10.30.30.123";
 	
 	public static final int REDIS_PORT = 6379;
+	
+	public static final int REDIS_PORT_2 = 6381;
 	
 	public static final String REDIS_AUTH = "lion";
 	
