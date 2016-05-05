@@ -9,6 +9,6 @@ public interface DeptOperation {
 	
 	public void read() throws SQLException,ParserConfigurationException,TransformerException;
 	
-	public void write(String filePath) throws SQLException,ParserConfigurationException;
+	public void write(String filePath) throws Exception;
 	
 }

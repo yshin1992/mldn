@@ -1,4 +1,4 @@
-create database mldn default charset=utf8;
+create database mldn default character set utf8;
 
 use mldn;
 
