@@ -27,14 +27,31 @@ public class FaultCacheDaoImpl implements FaultCacheDao{
 	
 	private static final String[] fields = {"id","machineryId","faultCode","beginTime","endTime",
 											"beginLongitude","beginLatitude","endLongitude","endLatitude"};
+	
+	private void abandonFaults(ShardedJedis jedis){
+		List<String> keys = jedis.lrange(NAMESPACE_FAULT_LIST, 0, -1);
+		if(null != keys && keys.size()> 90){
+			int keySize = keys.size();
+			for(int i = keySize-1,j = keySize-10;i>=j;i--){
+				String key = jedis.rpop(NAMESPACE_FAULT_LIST);
+				jedis.del(key);
+			}
+		}
+	}
+	
 	@Override
 	public void addFaultList(List<Fault> faultList , PushStrategy strategy) {
 		// TODO Auto-generated method stub
 		if(null != faultList && faultList.size() > 0){
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			ShardedJedis jedis = JedisSharedPoolUtil.getResource();
+			abandonFaults(jedis);//丢弃一部分旧数据
 			for(Fault fault : faultList){
 				String key = NAMESPACE_FAULT + fault.getId();
+				if(jedis.hexists(key, fields[0])){
+					System.out.println(key+"已经存在");
+					continue;
+				}
 				jedis.hset(key, fields[0],String.valueOf(fault.getId()));
 				jedis.hset(key, fields[1], String.valueOf(fault.getMachineryId()));
 				jedis.hset(key, fields[2], fault.getFaultCode());
