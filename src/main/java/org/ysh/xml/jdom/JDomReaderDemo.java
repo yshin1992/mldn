@@ -24,6 +24,7 @@ public class JDomReaderDemo {
 		SAXBuilder builder = new SAXBuilder();
 		Document doc = builder.build(JDomReaderDemo.class.getResourceAsStream(PATH_XML));
 		Element books = doc.getRootElement();
+		@SuppressWarnings("unchecked")
 		List<Element> list = books.getChildren("Book");
 		Iterator<Element> iter = list.iterator();
 		while(iter.hasNext()){

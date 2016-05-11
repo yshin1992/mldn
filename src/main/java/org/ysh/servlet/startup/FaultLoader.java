@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
 import org.ysh.cache.dao.FaultCacheDao;
@@ -19,18 +21,28 @@ public class FaultLoader extends HttpServlet {
 	
 	private FaultCacheDao faultCacheDao = new FaultCacheDaoImpl();
 	
-	private static final long _init_index_start = 0;
+	private static long _init_index_start;
 	
-	private static final int _init_count = 100;
+	private static int _init_count;
 	
-	private static final int _page_size = 10;
+	private static int _page_size;
 	
-	private static final long _period = 3*60*1000; //3 min
+	private static long _period; //3 min
 	
-    public FaultLoader() {
-        super();
+    @Override
+	public void init(ServletConfig config) throws ServletException {
+    	super.init(config);
+		_init_index_start = Integer.parseInt(config.getInitParameter("init_index_start"));
+        _init_count=Integer.parseInt(config.getInitParameter("init_count"));
+        _page_size=Integer.parseInt(config.getInitParameter("page_size"));
+        _period=Long.parseLong(config.getInitParameter("period"));
+        
         loadFault(_init_index_start,_init_count,PushStrategy.RPUSH);
         new Timer().schedule(new FaultLoaderTimer(), _period , _period);
+	}
+
+	public FaultLoader() {
+        super();
     }
     
     private void loadFault(long start,int end ,PushStrategy pushStrategy){

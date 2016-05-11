@@ -14,6 +14,7 @@ public class Dom4jReaderDemo {
 		// TODO Auto-generated method stub
 		Document doc = new SAXReader().read(Dom4jReaderDemo.class.getResourceAsStream(PATH_XML));
 		Element root = doc.getRootElement();
+		@SuppressWarnings("unchecked")
 		Iterator<Element> iter = root.elementIterator("Book");//取得其全部的子节点
 		while(iter.hasNext()){
 			Element elem = iter.next(); //Book子节点
