@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ysh.domain.LoginUser;
+
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -24,6 +26,9 @@ public class LoginServlet extends HttpServlet {
 		 * 用户验证
 		 * 略
 		 */
+		LoginUser loginUser = new LoginUser();
+		loginUser.setUsername(req.getParameter("username"));
+		req.getSession().setAttribute("loginUser", loginUser);
 		req.getRequestDispatcher("pages/result.jsp").forward(req, resp);
 	}
 

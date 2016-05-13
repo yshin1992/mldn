@@ -16,17 +16,18 @@ import javax.servlet.ServletResponse;
  */
 public class CharacterEncodingFilter implements Filter {
 
+	private String charset;
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		
+		this.charset = filterConfig.getInitParameter("charset");
 	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding(this.charset);
 		chain.doFilter(request, response);
-		response.setCharacterEncoding("UTF-8");
+//		response.setCharacterEncoding("UTF-8");
 	}
 
 	@Override
