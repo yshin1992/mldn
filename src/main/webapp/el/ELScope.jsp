@@ -18,6 +18,6 @@
 	session范围:${sessionScope.info }<br/>
 	application范围:${applicationScope.info }<br/>
 	默认范围:${info }<br/>
-	当前sessionId:${pageContext.session.id }
+	当前sessionId:${pageContext.session.id }<br/>
 </body>
 </html>

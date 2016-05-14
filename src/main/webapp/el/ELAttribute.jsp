@@ -14,7 +14,7 @@ label{
 <title>EL内置表达式对象的调用</title>
 </head>
 <body>
-	<form action="ELLoginResult.jsp" method="post">
+	<form action="${pageContext.servletContext.contextPath }/el/ELLoginResult.jsp" method="post">
 		<label>用户名</label><input type="text" name="username"/><br/>
 		<label>密码</label><input type="password" name="passwd" /><br/>
 		<label>密保问题</label>
@@ -24,5 +24,7 @@ label{
 		<br/>
 		<input type="submit" value="提交" />
 	</form>
+	<br/>
+	
 </body> 
 </html>

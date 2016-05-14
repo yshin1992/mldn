@@ -13,3 +13,6 @@
 13.listener 之 ServletRequestListener,ServletRequestAttributeListener 见代码 org.ysh.listener.MLDNRequestAttributeListener,MLDNRequestListener
 13.EL表达式调用内置对象pageScope,requestScope,sessionScope,applicationScope
 14.EL表达式调用内置对象pageContext,param,paramValues,header,headerValues,cookie,initParam
+15.EL表达式中集合的取值
+16.EL表达式运算符 + - * /(div) %(mod) ==(eq) <(lt) <=(le) >(gt) >=(ge) !=(ne) &&(and) ||(or) !(not) empty ?: ()
+17.Tomcat数据源

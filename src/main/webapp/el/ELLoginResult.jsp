@@ -14,8 +14,8 @@ label{
 <title>EL内置表达式对象的调用</title>
 </head>
 <body>
-<label>用户名</label>${param.username }
-<label>密码</label>${param.passwd }
-<label>密保结果</label>${paramValues.fruits }
+<label>用户名</label>${param.username }<br/>
+<label>密码</label>${param.passwd }<br/>
+<label>密保结果</label>${paramValues.fruits[0] }
 </body> 
 </html>

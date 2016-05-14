@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ysh.constants.SysConstants;
+
 import com.jspsmart.upload.Files;
 import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
-
-import static org.ysh.constants.SysConstants.PATH_UPLOAD;
 
 public class UploadServlet extends HttpServlet {
 
@@ -41,7 +41,7 @@ public class UploadServlet extends HttpServlet {
 		smartUpload.initialize(config,req,resp);
 		try {
 			smartUpload.upload(); //准备上传
-			smartUpload.save(PATH_UPLOAD); //真实上传
+			smartUpload.save(SysConstants.PATH_UPLOAD); //真实上传
 			Files files = smartUpload.getFiles();
 			String picName = files.getFile(0).getFileName();
 			//另存为

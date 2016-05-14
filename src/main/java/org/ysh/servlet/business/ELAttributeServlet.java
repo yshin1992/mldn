@@ -12,6 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 public class ELAttributeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Override
+	public void init()
+	{
+		System.err.println("ELAttributeServlet init ....");
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.getRequestDispatcher("el/ELAttribute.jsp").forward(request, response);
@@ -21,4 +27,9 @@ public class ELAttributeServlet extends HttpServlet {
 		
 	}
 
+	@Override
+	public void destroy()
+	{
+		System.err.println("ELAttributeServlet destory ....");
+	}
 }
