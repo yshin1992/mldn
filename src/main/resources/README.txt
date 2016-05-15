@@ -16,3 +16,9 @@
 15.EL表达式中集合的取值
 16.EL表达式运算符 + - * /(div) %(mod) ==(eq) <(lt) <=(le) >(gt) >=(ge) !=(ne) &&(and) ||(or) !(not) empty ?: ()
 17.Tomcat数据源
+18.自定义标签的使用 
+19.带有body的自定义标签的使用
+20.迭代标签的定义及使用doAfterBody()
+21.TagExtraInfo类和VariableInfo类的使用
+22.SimpleTagSupport的使用 注意body-content中设置为JSP时，对使用SimpleTagSupport的标签类是无效的，需使用scriptless替代
+23.DynamicAtrributes接口的使用

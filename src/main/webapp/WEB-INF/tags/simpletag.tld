@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://javasuncom/xml/ns/j2ee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_1.xsd" 
+version="2.1">	
+	<tlib-version>1.0</tlib-version>
+	<short-name>pe</short-name>
+	<uri>http://www.ysh.org/simple.tld</uri>
+	<!-- 日期格式化标签 -->
+	<tag>
+		<name>simpleDate</name>
+		<tag-class>org.ysh.simpletags.DateFormatSimpleTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>formatDate</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pattern</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- 带有body体的自定义标签 -->
+	
+	<tag>
+		<name>simpleListIter</name>
+		<tag-class>org.ysh.simpletags.SimpleIteraterTag</tag-class>
+		<!-- 这里设置这个意义不大，因为body-content为scriptless时 JSP脚本元素不能使用
+		<tei-class>org.ysh.tags.BodyIterateTagExtraInfo</tei-class> -->
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>list</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- DynamicAttributesTag接口 -->
+	<tag>
+		<name>dynamicAttrs</name>
+		<tag-class>org.ysh.simpletags.DynamicAttrsTag</tag-class>
+		<body-content>scriptless</body-content>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	
+</taglib> 

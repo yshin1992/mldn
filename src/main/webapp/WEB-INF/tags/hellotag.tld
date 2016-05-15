@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://javasuncom/xml/ns/j2ee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_1.xsd" 
+version="2.1">	
+	<tlib-version>1.0</tlib-version>
+	<short-name>pe</short-name>
+	<uri>http://www.ysh.org/hello.tld</uri>
+	<tag>
+		<name>hello</name>
+		<tag-class>org.ysh.tags.HelloTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<!-- 日期格式化标签 -->
+	<tag>
+		<name>date</name>
+		<tag-class>org.ysh.tags.DateFormatTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>formatDate</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pattern</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- 带有body体的自定义标签 -->
+	<tag>
+		<name>attr</name>
+		<tag-class>org.ysh.tags.AttrWithBodyTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>scope</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>attributeName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>listIter</name>
+		<tag-class>org.ysh.tags.IteraterTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>list</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>bodyListIter</name>
+		<tag-class>org.ysh.tags.BodyIterateTag</tag-class>
+		<tei-class>org.ysh.tags.BodyIterateTagExtraInfo</tei-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>list</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib> 
