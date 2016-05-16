@@ -22,3 +22,5 @@
 21.TagExtraInfo类和VariableInfo类的使用
 22.SimpleTagSupport的使用 注意body-content中设置为JSP时，对使用SimpleTagSupport的标签类是无效的，需使用scriptless替代
 23.DynamicAtrributes接口的使用
+24.jstl标签库 <c:out> <c:set> <c:remove> <c:choose><c:when><c:otherwise> <c:forEach> <c:forTokens>
+25.jstl国际化标签库 <fmt:setLocale> <fmt:requestEncoding> <fmt:bundle>  <fmt:message> <fmt:setBundle>
