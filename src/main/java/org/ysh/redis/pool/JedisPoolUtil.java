@@ -22,6 +22,8 @@ public class JedisPoolUtil {
 		config.setMaxWaitMillis(PoolCfg.REDIS_MAX_WAIT_TIME);
 		config.setTestOnBorrow(PoolCfg.REDIS_TEST_ON_BORROW);
 		jedisPool = new JedisPool(config, PoolCfg.REDIS_HOST, PoolCfg.REDIS_PORT,PoolCfg.REDIS_TIME_OUT,PoolCfg.REDIS_AUTH);
+		
+		
 	}
 	
 	public static synchronized Jedis getResource()

@@ -24,3 +24,9 @@
 23.DynamicAtrributes接口的使用
 24.jstl标签库 <c:out> <c:set> <c:remove> <c:choose><c:when><c:otherwise> <c:forEach> <c:forTokens>
 25.jstl国际化标签库 <fmt:setLocale> <fmt:requestEncoding> <fmt:bundle>  <fmt:message> <fmt:setBundle>
+26.jstl数字格式化标签 <fmt:formatNumber> <fmt:parseNumber> <fmt:formatDate> <fmt:parseDate>
+27.jstlSQL标签库 <sql:setDataSource> <sql:query> <sql:update> <sql:transaction>
+28.jstlXML解析标签库 <x:parse> <x:out> <x:if> <x:choose><x:when><x:otherwise> <x:forEach>
+29.jstl函数标签库 fn
+30.Ajax技术
+31.JavaMail 邮件发送

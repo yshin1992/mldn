@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Books>
+	<Book>
+		<name id="se" price="85">Java Core</name>
+	</Book>
+	<Book>
+		<name id="web" price="105">Java EE</name>
+	</Book>
+</Books>
