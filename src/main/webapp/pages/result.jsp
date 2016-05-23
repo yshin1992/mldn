@@ -51,7 +51,6 @@
 		setInterval(function(){
 			document.getElementById("seconds").innerHTML = countDown();
 		}, 1000);
-		
 	}
 </script>
 </html>

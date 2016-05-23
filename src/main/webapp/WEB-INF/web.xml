@@ -192,6 +192,13 @@
 			<taglib-uri>http://www.ysh.org/simple.tld</taglib-uri>
 			<taglib-location>/WEB-INF/tags/simpletag.tld</taglib-location>
 		</taglib>
+		<jsp-property-group>
+			<url-pattern>/group/*</url-pattern>
+			<url-pattern>/group/*</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+			<include-prelude>/index.jsp</include-prelude>
+			<default-content-type>text/html</default-content-type>
+		</jsp-property-group>
 	</jsp-config>
 	
 	 <!-- 非编程式 的安全限制访问 -->
